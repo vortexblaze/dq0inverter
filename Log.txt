@@ -1,0 +1,6 @@
+Inverter Development Log
+
+25/3/2024
+- Initiated the Code for P,Q and Idref calculation
+- Initiated Git Version Control ( Which is not 100 %? )
+- DDSRF-Control (on progress) 
