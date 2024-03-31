@@ -4,3 +4,9 @@ Inverter Development Log
 - Initiated the Code for P,Q and Idref calculation
 - Initiated Git Version Control ( Which is not 100 %? )
 - DDSRF-Control (on progress) 
+
+31/3/2024
+-Changed referencegen and building the basics.
+-Initiated ZOH on all inputs (10kHz refresh)(require study for discrete time systems.)
+-Updated Logic initialization method ( detect changes in Value);
+-Using Trapezoial Method for integration. (Need further development) (Check with gemini)

@@ -36,8 +36,8 @@ while true % Main control loop
 
     % ... Get sensor readings and desired power ...
     desired_power = ...;
-    measured_power = ...;
-    Vd = ...; 
+    measured_power = Vd*Id;
+    Vd = ; 
 
     % Calculate control output 
     control_output = calculate_control_output(desired_power, measured_power, Vd);

@@ -1,23 +1,24 @@
 #include <math.h>
 #include <referencegen.h>
 
-double Prefcalc(double Id, double Ed)
-{
-  return maxdccurent*Ed;
+double getPowerValue (){
+
+
+
 }
 
-double Idrefcalc( double integralDeltaP) {
-    double Idref = (1 / Vd) * (Kp * error + Ki * integralDeltaP);
-    return Idref;
-}
+while (1) { // Main loop (adjust condition if needed)
+        double current_Pin, current_Pout;
 
+        get_current_values(&current_Pin, &current_Pout);
 
-double Vdrefcalc(double IntegraldeltaId, double iq, double Vd)
-{
-  return double Kp(deltaId)+KI(IntegraldeltaId)-(2*pi*Lf*Iq)+Vd;
-}
+        if (current_Pin != previous_Pin || current_Pout != previous_Pout) {
+            // Input has changed, calculate integrals 
+            integral_Pin += previous_Pin * dt; 
+            integral_Pout += previous_Pout * dt;
 
+            // Optionally Output Values (or use them in your control logic)
+            printf("Integral of Pin:  %f\n", integral_Pin);
+            printf("Integral of Pout: %f\n", integral_Pout);
+        }
 
-double Vqrefcalc(double deltaP);{ //Vqref calculation
-  return double Kp(deltaId)+KI(integral_term)-(2*pi*Lf*Iq)+Vd;
-}

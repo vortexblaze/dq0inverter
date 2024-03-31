@@ -1,5 +1,6 @@
 
 #include <referencegen.c> // Headers File
+#infdef <> //need to define matlab functions. Check Google and MATLAB for more info
 
 // Input parameters (adjust according to your system)
 double P_ref;   // Array to store active power references
