@@ -10,3 +10,13 @@ Inverter Development Log
 -Initiated ZOH on all inputs (10kHz refresh)(require study for discrete time systems.)
 -Updated Logic initialization method ( detect changes in Value);
 -Using Trapezoial Method for integration. (Need further development) (Check with gemini)
+*for energy signal, E is finite and P is 0 (Check Energy signals in DSP, might )
+
+1/4/2024
+-C Function is finalized for this application
+-Initializing the Development for the generation in Matlab and VS code
+-Trapezoial Method is implemented. 
+-Implemented Vdref and Idref Calculation. Data Collection Function and condition is still yet to be developed.
+-Matlab Simulink C function is still yet to be configured. (https://www.mathworks.com/help/simulink/integrate-external-c-algorithms-using-c-function-block.html)
+
+reference website and other material:

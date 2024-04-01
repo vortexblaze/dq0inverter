@@ -1,24 +1,34 @@
-#include <math.h>
 #include <referencegen.h>
+#include <math.h>  // For the sqrt function
+//#include <stulib.h>;
 
-double getPowerValue (){
+double PowerIntegral (double currentPin, double currentPout){
 
-
-
+if (currentPin != previousPin || currentPout != previousPout) {
+            // Input has changed, calculate integrals 
+            double  integralPin = 0.5 * (currentPin + previousPin) * dt;
+            double  integralPout = 0.5 * (currentPout + previousPout) * dt;
+            currentPin=previousPin;
+            currentPout=previousPout;
+            return integralPin-integralPout;
+        }
 }
 
-while (1) { // Main loop (adjust condition if needed)
-        double current_Pin, current_Pout;
+double getInPowerValue (double Iin,double Vin){
+    return Iin*Vin;
+}
 
-        get_current_values(&current_Pin, &current_Pout);
 
-        if (current_Pin != previous_Pin || current_Pout != previous_Pout) {
-            // Input has changed, calculate integrals 
-            integral_Pin += previous_Pin * dt; 
-            integral_Pout += previous_Pout * dt;
+double getOutPowerValue (double Iout, double Vout){
+    return Iout*Vout;
+}
 
-            // Optionally Output Values (or use them in your control logic)
-            printf("Integral of Pin:  %f\n", integral_Pin);
-            printf("Integral of Pout: %f\n", integral_Pout);
-        }
+double VdrefCalc(){ //Vd* calculation
+double integralP = PowerIntegral(getInPowerValue(Iin,Vin),getOutPowerValue(Iout,Vout));
+return Kp*(Idref-Id)+Ki*(integralP)-(2*pi*Iq*Lf)+Vd;
+}
 
+double Idref(double Vd,double Pin, double Pout){
+double integralP = PowerIntegral(getInPowerValue(Iin,Vin),getOutPowerValue(Iout,Vout));
+return (1/Vd)*(Kp*(Pin-Pout))*(Ki*(integralP));
+}

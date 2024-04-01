@@ -1,18 +1,29 @@
 
-#include <referencegen.c> // Headers File
-#infdef <> //need to define matlab functions. Check Google and MATLAB for more info
-
 // Input parameters (adjust according to your system)
-double P_ref;   // Array to store active power references
-double Q_ref = 0 ;   // Array to store reactive power references
-double Pin,Pout,Delta; 
-double pi =3.142;
-double Idin,Idout;
+extern double P_ref;   // Array to store active power references
+extern double Q_ref = 0 ;   // Array to store reactive power references
+extern double Idin,Idout;
+extern double previousPin=0,previousPout=0;
+extern double dt = 0.0001;
+extern double integralPin, integralPout;
+
+//System Input Value for reference generation
+extern double Kp = 10;
+extern double Ki = 1;
+extern double Idref,Id,Iqref,Iq,Vd,Vq;
+extern double Lf;
+extern double pi =3.142;
+
+//DC Link Voltage Variables
+extern double Iin,Iout,Vin,Vout;
 
 
+#ifndef referencegen.h //prevent multiple inclusion for header file
+#define referencegen.h
 //function declaration
-double Vdrefcalc(double deltaP); //Vdref calculation
-double Vqrefcalc(double deltaP); //Vqref calculation
-double deltaPcalc (double Pin,double Pout); //Delta Pout Calculation
-double Idrefcalc(double Pin, double Pout, double Kp, double Ki, double Vd, double dt, double &integral_term); //calculate Idref
-
+double PowerIntegral (double currentPin, double currentPout);
+double getInPowerValue (double Iin,double Vin);
+double getOutPowerValue (double Iout, double Vout);
+double VdrefCalc ();
+double Idref(double Vd,double Pin, double Pout)
+#endif
