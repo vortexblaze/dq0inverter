@@ -20,6 +20,14 @@ Inverter Development Log
 -Matlab Simulink C function is still yet to be configured. (https://www.mathworks.com/help/simulink/integrate-external-c-algorithms-using-c-function-block.html)
  
  2/4/2024
- -The Idea of implement Timer /w Tic and Toc deltaT is finalized as using other timer probably will be more troublesome
+ -The Idea of implement simulation time is finalized as using other tic/toc timer probably will be more troublesome
  -Thinking about the idea of implementing main loop in the output and input for C function.
+ -Discussed with ChatGPT (Hurray! Gemini Sucksss) about the C-Function. Will develop the code after the finalized C source function.
+
+*Notes for C Fcn Block:
+Output Block:
+Write the code that the block executes during simulation (not sure whether the code will loop or do I need to add a while loop for it)
+Start and Terminate Code:
+The code that will execute during start and the end of the simulation (used for conditioning and also declaration of the variable)
+
 reference website and other material:

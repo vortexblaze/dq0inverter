@@ -4,7 +4,6 @@ extern double P_ref;   // Array to store active power references
 extern double Q_ref = 0 ;   // Array to store reactive power references
 extern double Idin,Idout;
 extern double previousPin=0,previousPout=0;
-extern double dt = 0.0001;
 extern double integralPin, integralPout;
 
 //System Input Value for reference generation
@@ -21,9 +20,8 @@ extern double Iin,Iout,Vin,Vout;
 #ifndef referencegen.h //prevent multiple inclusion for header file
 #define referencegen.h
 //function declaration
-double PowerIntegral (double currentPin, double currentPout);
 double getInPowerValue (double Iin,double Vin);
 double getOutPowerValue (double Iout, double Vout);
 double VdrefCalc ();
-double Idref(double Vd,double Pin, double Pout);
-#endifl
+double PowerIntegral (double currentPin, double currentPout, double dt);
+#endif
