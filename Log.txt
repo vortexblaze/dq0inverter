@@ -18,5 +18,8 @@ Inverter Development Log
 -Trapezoial Method is implemented. 
 -Implemented Vdref and Idref Calculation. Data Collection Function and condition is still yet to be developed.
 -Matlab Simulink C function is still yet to be configured. (https://www.mathworks.com/help/simulink/integrate-external-c-algorithms-using-c-function-block.html)
-
+ 
+ 2/4/2024
+ -The Idea of implement Timer /w Tic and Toc deltaT is finalized as using other timer probably will be more troublesome
+ -Thinking about the idea of implementing main loop in the output and input for C function.
 reference website and other material:

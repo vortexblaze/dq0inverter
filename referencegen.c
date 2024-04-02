@@ -1,6 +1,7 @@
 #include <referencegen.h>
 #include <math.h>  // For the sqrt function
-//#include <stulib.h>;
+#include <time.h> // For the timing Function
+
 
 double PowerIntegral (double currentPin, double currentPout){
 

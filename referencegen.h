@@ -26,4 +26,4 @@ double getInPowerValue (double Iin,double Vin);
 double getOutPowerValue (double Iout, double Vout);
 double VdrefCalc ();
 double Idref(double Vd,double Pin, double Pout);
-#endif
+#endifl
