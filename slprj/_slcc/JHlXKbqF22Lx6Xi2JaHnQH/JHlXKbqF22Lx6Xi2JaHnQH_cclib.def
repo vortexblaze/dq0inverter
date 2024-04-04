@@ -1,0 +1,8 @@
+EXPORTS
+    IdrefCalc_JHlXKbqF22Lx6Xi2JaHnQH @1
+    PowerIntegral_JHlXKbqF22Lx6Xi2JaHnQH @2
+    VdrefCalc_JHlXKbqF22Lx6Xi2JaHnQH @3
+    getInPowerValue_JHlXKbqF22Lx6Xi2JaHnQH @4
+    getOutPowerValue_JHlXKbqF22Lx6Xi2JaHnQH @5
+    get_checksum_source_info @6
+    get_dll_checksum_JHlXKbqF22Lx6Xi2JaHnQH @7

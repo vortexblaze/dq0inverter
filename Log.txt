@@ -2,7 +2,7 @@ Inverter Development Log
 
 25/3/2024
 - Initiated the Code for P,Q and Idref calculation
-- Initiated Git Version Control ( Which is not 100 %? )
+- Initiated Git Version Control ( Which is not 100 %?, and now it is )
 - DDSRF-Control (on progress) 
 
 31/3/2024
@@ -30,4 +30,8 @@ Write the code that the block executes during simulation (not sure whether the c
 Start and Terminate Code:
 The code that will execute during start and the end of the simulation (used for conditioning and also declaration of the variable)
 
-reference website and other material:
+4/4/2024
+-All Functions variable is defined internally.
+-Updated the algoritm flow with all the system defined within the C Function Block.
+-
+

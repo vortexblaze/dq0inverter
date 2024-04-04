@@ -1,27 +1,18 @@
 
-// Input parameters (adjust according to your system)
-extern double P_ref;   // Array to store active power references
-extern double Q_ref = 0 ;   // Array to store reactive power references
-extern double Idin,Idout;
-extern double previousPin=0,previousPout=0;
-extern double integralPin, integralPout;
+#include <math.h>  // For the sqrt function
+#include <time.h> // For the timing Function
+#include "simstruc.h" Make sure to include this if you're using Simulink's simulation time functions
 
-//System Input Value for reference generation
-extern double Kp = 10;
-extern double Ki = 1;
-extern double Idref,Id,Iqref,Iq,Vd,Vq;
-extern double Lf;
-extern double pi =3.142;
-
-//DC Link Voltage Variables
-extern double Iin,Iout,Vin,Vout;
 
 
 #ifndef referencegen.h //prevent multiple inclusion for header file
 #define referencegen.h
+
+
 //function declaration
 double getInPowerValue (double Iin,double Vin);
 double getOutPowerValue (double Iout, double Vout);
-double VdrefCalc ();
-double PowerIntegral (double currentPin, double currentPout, double dt);
+double PowerIntegral(SimStruct *S,double currentPin, double currentPout);
+double VdrefCalc(double Idref, double Id, double Iq, double Iin, double Vin, double Iout, double Vout, double Vd);
+double IdrefCalc(double Vd,double Iin, double Iout, double Vin, double Vout);
 #endif

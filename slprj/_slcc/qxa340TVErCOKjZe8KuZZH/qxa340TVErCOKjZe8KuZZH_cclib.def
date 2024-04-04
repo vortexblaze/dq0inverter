@@ -1,0 +1,8 @@
+EXPORTS
+    Idref_qxa340TVErCOKjZe8KuZZH @1
+    PowerIntegral_qxa340TVErCOKjZe8KuZZH @2
+    VdrefCalc_qxa340TVErCOKjZe8KuZZH @3
+    getInPowerValue_qxa340TVErCOKjZe8KuZZH @4
+    getOutPowerValue_qxa340TVErCOKjZe8KuZZH @5
+    get_checksum_source_info @6
+    get_dll_checksum_qxa340TVErCOKjZe8KuZZH @7

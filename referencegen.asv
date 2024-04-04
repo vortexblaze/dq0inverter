@@ -9,7 +9,6 @@ double PreviousId = 0,PrevioudIq = 0;
 double lastTime = -1.0; // Initisalize to an invalid value to indicate first run
 double previousPin = 0,previousPout =0;
 
-
 double PowerIntegral(SimStruct *S,double currentPin, double currentPout) {
     time_T currentTime = ssGetT(S); // Retrieve current simulation time
     double dt = 0.0;
@@ -45,7 +44,7 @@ double getOutPowerValue (double Iout, double Vout){
 }
 
 
-double IdrefCalc(double Vd,double Iin, double Iout, double Vin, double Vout){
+double Idref(SimStruct *S,double Vd,double Iin, double Iout, double Vin, double Vout){
     double inputPower = getInPowerValue(Iin, Vin);
     double outputPower = getOutPowerValue(Iout, Vout);
 
