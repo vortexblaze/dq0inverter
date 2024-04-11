@@ -12,7 +12,10 @@
 //function declaration
 double getInPowerValue (double Iin,double Vin);
 double getOutPowerValue (double Iout, double Vout);
-double PowerIntegral(SimStruct *S,double currentPin, double currentPout);
-double VdrefCalc(double Idref, double Id, double Iq, double Iin, double Vin, double Iout, double Vout, double Vd);
-double IdrefCalc(double Vd,double Iin, double Iout, double Vin, double Vout);
+double PowerIntegral(double Time,double currentPin, double currentPout);
+//double VdrefCalc(double Idref, double Id, double Iq, double Iin, double Vin, double Iout, double Vout, double Vd);
+double IdrefCalc(double Time,double Vd,double Iin, double Iout, double Vin, double Vout);
+bool ReferenceGenTrigger(double freq);
+
+//bool datacheck (double Id, double Iq,double Vd);
 #endif

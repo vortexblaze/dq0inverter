@@ -35,3 +35,16 @@ The code that will execute during start and the end of the simulation (used for 
 -Updated the algoritm flow with all the system defined within the C Function Block.
 -
 
+10/4/2024
+-Changes in the C Function Block. Will have the DataValidate thingy built-it.
+-Considering to implement Relay Control with the C Function block. This will largely improve the systems performance and future expandabiliy if I want to implement more control.
+-Need to understand again about the reference generation. Will try to make the thingy work this week.
+-learn back how AC system works! Then I can make a sensible Power Meter for Reference.
+
+11/4/2024
+-Changed the method of obtain DeltaT (yeay now it works)
+-Implemented changes to the C Funtion. Now it checks whether the PLL is synced.
+-Changes in the Function of the C Function. Nothing major but to optimize it.
+Next Job:
+* Design the DDSRF Systems with accurate Id and Iq. Discuss about the oscillation with Mr Chai and ChatGPT for a solution. 
+* Check back with the Thesis, check with the equation and the implementation and design the data aquicission.
