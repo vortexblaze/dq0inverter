@@ -1,0 +1,9 @@
+EXPORTS
+    IdrefCalc_D0Qr9fo7Qr3nVDq3ImVQH @1
+    PowerIntegral_D0Qr9fo7Qr3nVDq3ImVQH @2
+    ReferenceGenTrigger_D0Qr9fo7Qr3nVDq3ImVQH @3
+    detectZeroCrossing_D0Qr9fo7Qr3nVDq3ImVQH @4
+    getInPowerValue_D0Qr9fo7Qr3nVDq3ImVQH @5
+    getOutPowerValue_D0Qr9fo7Qr3nVDq3ImVQH @6
+    get_checksum_source_info @7
+    get_dll_checksum_D0Qr9fo7Qr3nVDq3ImVQH @8
