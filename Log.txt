@@ -48,3 +48,12 @@ The code that will execute during start and the end of the simulation (used for 
 Next Job:
 * Design the DDSRF Systems with accurate Id and Iq. Discuss about the oscillation with Mr Chai and ChatGPT for a solution. 
 * Check back with the Thesis, check with the equation and the implementation and design the data aquicission.
+
+18/4/2024
+-Starting the development of the DDSRF Reference Frame. 
+-Understand about the positive and negative sequence of the three phase systems, need to understand how to obtain the phasor of the system.
+-Changed the Sync State method, changed to current monitoring ZCD instead of Voltage based.
+
+Next Job:
+* Understand and complete the design for DDSRF.
+* Based on the paper, redesign the Grid Load and also implement a Three Phase Systems for testing.
