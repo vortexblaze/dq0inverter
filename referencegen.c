@@ -4,6 +4,7 @@ static double Lf = 0.0204;
 static double pi = 3.1415;
 static double Kp = 10;
 static double Ki = 1;
+static double a = 
 //double Time = -1;
 double currentTime = -1;
 double PreviousId = 0,PrevioudIq = 0;
@@ -11,11 +12,6 @@ double lastTime = -1.0; // Initisalize to an invalid value to indicate first run
 double previousPin = 0,previousPout =0;
 double dt = 0.0;//Assign in the C function
 
-bool ReferenceGenTrigger(double freq){
-if (freq<50.05||freq>49.95){
-    return true;
-}else  {return false;}
-}
 
 double PowerIntegral(double Time,double currentPin, double currentPout) {
      
@@ -65,55 +61,37 @@ double IdrefCalc(double Time,double Vd,double Iin, double Iout, double Vin, doub
 }
 
 
-/*double VdrefCalc(double Idref, double Id, double Iq, double Iin, double Vin, double Iout, double Vout, double Vd) {
-    double inputPower = getInPowerValue(Iin, Vin);
-    double outputPower = getOutPowerValue(Iout, Vout);
-    double integralP = PowerIntegral(Time,inputPower, outputPower);
+double NegativeSequenceVa( double Va,  double Vb, double Vc){
 
-    double Vdref = Kp * (Idref - Id) + Ki * integralP - (2 * pi * Iq * Lf) + Vd;
-    return Vdref;
-}*/
+      // Phase shift operator a, which is e^(j*120°)
+    double a = cexp(I * 2.0 * M_PI / 3.0);
+
+    // Calculate the negative sequence component
+    double V_negative = (Va + cpow(a, 2) * Vb + a * Vc) / 3.0;
+
+    return V_negative;
     
+}
+
+double NegativeSequenceVb(double Va,double Vb, double Vc){
+
+      // Phase shift operator a, which is e^(j*120°)
+    double a = cexp(I * 2.0 * M_PI / 3.0);
+
+    // Calculate the negative sequence component
+    double V_negative = (Vb + cpow(a, 2) * Vc + a * Va) / 3.0;
+
+    return V_negative;
     
-/*// Legacy Code for VdrefCalc();
-double VdrefCalc(){ //Vd* calculation
-double integralP = PowerIntegral(getInPowerValue(Iin,Vin),getOutPowerValue(Iout,Vout));
-return Kp*(Idref-Id)+Ki*(integralP)-(2*pi*Iq*Lf)+Vd;
-} */
+double NegativeSequenceVc(double Va,double Vb,double Vc){
 
-/*bool datacheck (double Id, double Iq,double Vd){
-    if(isNaN(Id) || isNAN(Iq) || isNAN(Vd)){
-    return false;
-    } else if (Id>IdHighThreshold ||Iq>IqHighThreshold || Vd>500){
-        return false;}
-        else if(Id<IdLowThreshold ||Iq<IqLowThreshold){
-            return false;
-        }
-    else {return true;}
-}*/
+      // Phase shift operator a, which is e^(j*120°)
+    double a = cexp(I * 2.0 * M_PI / 3.0);
 
-/*
-bool validateAllInputs(double input1, double input2, double input3) {
-    if (!validateInput1(input1)) {
-        return false;
-    }
-    if (!validateInput2(input2)) {
-        return false;
-    }
-    if (!validateInput3(input3)) {
-        return false;
-    }
-    return true;
+    // Calculate the negative sequence component
+    double V_negative = (Vc + cpow(a, 2) * Va + a * Vb) / 3.0;
+
+    return V_negative;
+    
 }
 
-bool validateIq(double Iq){
-   
-}
-
-bool validateId(double Id){
-
-}
-
-bool validateVd(double Vd){
-
-}  */
