@@ -4,9 +4,9 @@ static double Lf = 0.0204;
 static double pi = 3.1415;
 static double Kp = 10;
 static double Ki = 1;
-//constant double a = cexp(I * 2.0 * M_PI / 3.0);  // a = e^(j*120°) ;
+static double a = 
 //double Time = -1;
-double currentTime = 0;
+double currentTime = -1;
 double PreviousId = 0,PrevioudIq = 0;
 double lastTime = -1.0; // Initisalize to an invalid value to indicate first run
 double previousPin = 0,previousPout =0;
@@ -66,16 +66,19 @@ double IdrefCalc(double Time,double Vd,double Iin, double Iout, double Vin, doub
 }
 
 
-std::complex<double> NegativeSequenceVa(std::complex<double> Va, std::complex<double> Vb, std::complex<double> Vc) {
-    const std::complex<double> a = std::exp(std::complex<double>(0, 2.0 * M_PI / 3.0));
+complex double NegativeSequenceVa(complex double Va, complex double Vb,complex double Vc){
 
-    // Use std::pow from the C++ standard library
-    std::complex<double> V_negative = (Va + std::pow(a, 2) * Vb + a * Vc) / 3.0;
+      // Phase shift operator a, which is e^(j*120°)
+    complex double a = cexp(I * 2.0 * M_PI / 3.0);
+
+    // Calculate the negative sequence component
+    complex double V_negative = (Va + cpow(a, 2) * Vb + a * Vc) / 3.0;
 
     return V_negative;
+    
 }
 
-/*_complex double NegativeSequenceVb(complex double Va,complex double Vb,complex double Vc){
+complex double NegativeSequenceVb(complex double Va, complex double Vb,complex double Vc){
 
       // Phase shift operator a, which is e^(j*120°)
     complex double a = cexp(I * 2.0 * M_PI / 3.0);
@@ -85,7 +88,8 @@ std::complex<double> NegativeSequenceVa(std::complex<double> Va, std::complex<do
 
     return V_negative;
     
-_complex double NegativeSequenceVc(complex double Va,complex double Vb,complex double Vc){
+}
+complex double NegativeSequenceVc(complex double Va, complex double Vb,complex double Vc){
 
       // Phase shift operator a, which is e^(j*120°)
     complex double a = cexp(I * 2.0 * M_PI / 3.0);
@@ -95,5 +99,5 @@ _complex double NegativeSequenceVc(complex double Va,complex double Vb,complex d
 
     return V_negative;
     
-}*/
+}
 

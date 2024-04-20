@@ -57,3 +57,12 @@ Next Job:
 Next Job:
 * Understand and complete the design for DDSRF.
 * Based on the paper, redesign the Grid Load and also implement a Three Phase Systems for testing.
+
+20/4/2024
+~LegacyDevelopment Branch
+-Modified the Negative Sequnce Generation code
+-Changed C Library to Cpp extention.
+-Otw changing complex number handler from pointer to class* (require development.)
+-DDSRF 3 phase will be developed after the DDSRF works on current single phase model.
+
+

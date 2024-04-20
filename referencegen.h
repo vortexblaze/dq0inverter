@@ -19,7 +19,7 @@ double IdrefCalc(double Time,double Vd,double Iin, double Iout, double Vin, doub
 bool ReferenceGenTrigger(double freq);
 
 //Negative Sequence Voltage Generation
- _complex double NegativeSequenceVa(double complex Va,double complex Vb,double complex Vc);
+ std::complex<double> NegativeSequenceVa(std::complex<double> Va, std::complex<double> Vb, std::complex<double> Vc);
  /*double NegativeSequenceVb( double Va,  double Vb, double Vc);
  double NegativeSequenceVc( double Va,  double Vb, double Vc);*/
 
