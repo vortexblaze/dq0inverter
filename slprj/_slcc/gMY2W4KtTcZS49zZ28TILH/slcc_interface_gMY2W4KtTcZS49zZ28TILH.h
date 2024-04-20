@@ -18,6 +18,7 @@ DLL_EXPORT_CC extern real_T getInPowerValue_gMY2W4KtTcZS49zZ28TILH(real_T Iin, r
 DLL_EXPORT_CC extern real_T getOutPowerValue_gMY2W4KtTcZS49zZ28TILH(real_T Iout, real_T Vout);
 DLL_EXPORT_CC extern real_T PowerIntegral_gMY2W4KtTcZS49zZ28TILH(real_T Time, real_T currentPin, real_T currentPout);
 DLL_EXPORT_CC extern real_T IdrefCalc_gMY2W4KtTcZS49zZ28TILH(real_T Time, real_T Vd, real_T Iin, real_T Iout, real_T Vin, real_T Vout);
+DLL_EXPORT_CC extern boolean_T ReferenceGenTrigger_gMY2W4KtTcZS49zZ28TILH(real_T freq);
 DLL_EXPORT_CC extern real_T NegativeSequenceVa_gMY2W4KtTcZS49zZ28TILH(real_T Va, real_T Vb, real_T Vc);
 DLL_EXPORT_CC extern real_T NegativeSequenceVb_gMY2W4KtTcZS49zZ28TILH(real_T Va, real_T Vb, real_T Vc);
 DLL_EXPORT_CC extern real_T NegativeSequenceVc_gMY2W4KtTcZS49zZ28TILH(real_T Va, real_T Vb, real_T Vc);

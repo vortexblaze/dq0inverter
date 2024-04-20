@@ -12,6 +12,11 @@ double lastTime = -1.0; // Initisalize to an invalid value to indicate first run
 double previousPin = 0,previousPout =0;
 double dt = 0.0;//Assign in the C function
 
+bool ReferenceGenTrigger(double freq){
+if (freq<50.05||freq>49.95){
+    return true;
+}else  {return false;}
+}
 
 double PowerIntegral(double Time,double currentPin, double currentPout) {
      
@@ -61,37 +66,35 @@ double IdrefCalc(double Time,double Vd,double Iin, double Iout, double Vin, doub
 }
 
 
-double NegativeSequenceVa( double Va,  double Vb, double Vc){
-
-      // Phase shift operator a, which is e^(j*120°)
-    double a = cexp(I * 2.0 * M_PI / 3.0);
+double complex NegativeSequenceVa(double complex Va, double complex Vb, double complex Vc) {
+    // Phase shift operator a, which is e^(j*120°)
+    double complex a = cexp(I * 2.0 * M_PI / 3.0);
 
     // Calculate the negative sequence component
-    double V_negative = (Va + cpow(a, 2) * Vb + a * Vc) / 3.0;
+    double complex V_negative = (Va + cpow(a, 2) * Vb + a * Vc) / 3.0;
 
     return V_negative;
-    
 }
 
-double NegativeSequenceVb(double Va,double Vb, double Vc){
+/*_complex double NegativeSequenceVb(complex double Va,complex double Vb,complex double Vc){
 
       // Phase shift operator a, which is e^(j*120°)
-    double a = cexp(I * 2.0 * M_PI / 3.0);
+    complex double a = cexp(I * 2.0 * M_PI / 3.0);
 
     // Calculate the negative sequence component
-    double V_negative = (Vb + cpow(a, 2) * Vc + a * Va) / 3.0;
+    complex double V_negative = (Vb + cpow(a, 2) * Vc + a * Va) / 3.0;
 
     return V_negative;
     
-double NegativeSequenceVc(double Va,double Vb,double Vc){
+_complex double NegativeSequenceVc(complex double Va,complex double Vb,complex double Vc){
 
       // Phase shift operator a, which is e^(j*120°)
-    double a = cexp(I * 2.0 * M_PI / 3.0);
+    complex double a = cexp(I * 2.0 * M_PI / 3.0);
 
     // Calculate the negative sequence component
-    double V_negative = (Vc + cpow(a, 2) * Va + a * Vb) / 3.0;
+    complex double V_negative = (Vc + cpow(a, 2) * Va + a * Vb) / 3.0;
 
     return V_negative;
     
-}
+}*/
 
