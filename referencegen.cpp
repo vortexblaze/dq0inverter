@@ -66,7 +66,7 @@ double IdrefCalc(double Time,double Vd,double Iin, double Iout, double Vin, doub
 }
 
 
-std::complex<double> NegativeSequenceVa(std::complex<double> Va, std::complex<double> Vb, std::complex<double> Vc) {
+/*std::complex<double> NegativeSequenceVa(std::complex<double> Va, std::complex<double> Vb, std::complex<double> Vc) {
     const std::complex<double> a = std::exp(std::complex<double>(0, 2.0 * M_PI / 3.0));
 
     // Use std::pow from the C++ standard library
@@ -75,7 +75,7 @@ std::complex<double> NegativeSequenceVa(std::complex<double> Va, std::complex<do
     return V_negative;
 }
 
-/*_complex double NegativeSequenceVb(complex double Va,complex double Vb,complex double Vc){
+_complex double NegativeSequenceVb(complex double Va,complex double Vb,complex double Vc){
 
       // Phase shift operator a, which is e^(j*120°)
     complex double a = cexp(I * 2.0 * M_PI / 3.0);
