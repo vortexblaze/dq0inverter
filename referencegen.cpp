@@ -66,6 +66,7 @@ double IdrefCalc(double Time,double Vd,double Iin, double Iout, double Vin, doub
 }
 
 
+
 /*std::complex<double> NegativeSequenceVa(std::complex<double> Va, std::complex<double> Vb, std::complex<double> Vc) {
     const std::complex<double> a = std::exp(std::complex<double>(0, 2.0 * M_PI / 3.0));
 
@@ -96,4 +97,5 @@ _complex double NegativeSequenceVc(complex double Va,complex double Vb,complex d
     return V_negative;
     
 }*/
+
 

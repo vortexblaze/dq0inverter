@@ -71,5 +71,9 @@ Next Job:
 -PWM Modulator still needed to be properly designed.
 -Currently the System can compile and run, just need improvement. estimated ending development day is at 4 May 2024
 
+29/4/2024
+-Initialized the Inverse Matrix Calculation for the reference generation. 
+-Built the inverse matrix calculation.
+
 
 
