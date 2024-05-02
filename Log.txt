@@ -75,5 +75,16 @@ Next Job:
 -Initialized the Inverse Matrix Calculation for the reference generation. 
 -Built the inverse matrix calculation.
 
+2/5/2024
+-Use the internal LU Inverse Block for the Inverse Matrix (You sohai bro)
+-Impelment different control reference generation method shown in the System
+-The PWM will be implemented using a cascaded Bridge Inverter VSI topology. (To save time deadline at 4 may)
+
+3/5/2024
+-DDSRF Reference Gen can now follow the voltage!
+-Still need to determine how to control the Power
+-3 Phase 4 wire modulation method need to be determined
+-Still need to fill some info for the presentation 
+
 
 

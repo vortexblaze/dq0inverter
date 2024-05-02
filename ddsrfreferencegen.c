@@ -3,7 +3,7 @@
 #define SIZE 4
 
 // Helper function to calculate the determinant of a 2x2 matrix
-double det2x2(double a, double b, double c, double d) {
+/*double det2x2(double a, double b, double c, double d) {
     return a * d - b * c;
 }
 
@@ -74,6 +74,7 @@ void getInverse(double mat[SIZE][SIZE], double inv[SIZE][SIZE]) {
     // For a 4x4 matrix, the determinant is a sum of products of various 3x3 sub-matrix determinants
     // Since this is a specific case, we can use a direct formula for a 4x4 determinant
     // ... (Implement determinant calculation here)
+    double det = determinant( mat[SIZE][SIZE], int n)
 
 
     // Check if the matrix is non-singular (has a non-zero determinant)
@@ -86,33 +87,37 @@ void getInverse(double mat[SIZE][SIZE], double inv[SIZE][SIZE]) {
     // For a 4x4 matrix, we can calculate cofactors for each element directly
     // ... (Implement cofactor and transpose here)
 
+    double Cofactor = getCofactor(mat[SIZE][SIZE], temp[SIZE][SIZE], p, q, n)
+
     // Divide adjugate matrix by determinant to get the inverse
     for (i = 0; i < SIZE; i++) {
         for (j = 0; j < SIZE; j++) {
             inv[i][j] = temp[i][j] / det;
         }
     }
+}*/
+
+
+void initializeMatrix(double mat[4][4], double ed_plus, double eq_plus, double ed_minus, double eq_minus) {
+    mat[0][0] = ed_plus;
+    mat[0][1] = eq_plus;
+    mat[0][2] = ed_minus;
+    mat[0][3] = eq_minus;
+    
+    mat[1][0] = ed_minus;
+    mat[1][1] = -eq_minus;
+    mat[1][2] = ed_plus;
+    mat[1][3] = eq_plus;
+    
+    mat[2][0] = ed_minus;
+    mat[2][1] = eq_minus;
+    mat[2][2] = ed_plus;
+    mat[2][3] = -eq_plus;
+    
+    mat[3][0] = eq_plus;
+    mat[3][1] = -ed_plus;
+    mat[3][2] = eq_minus;
+    mat[3][3] = -ed_minus;
 }
 
-void calculateReferenceCurrents(double ed_plus, double eq_plus, double ed_minus, double eq_minus,
-                                double Po_star, double Qo_star,
-                                double *id_star_plus, double *iq_star_plus,
-                                double *id_star_minus, double *iq_star_minus) {
-    // The inverse matrix components would be pre-calculated and known
-    double a11, a12, a13, a14;
-    double a21, a22, a23, a24;
-    double a31, a32, a33, a34;
-    double a41, a42, a43, a44;
-    
-    // Inverse matrix is filled with the values for the sake of example.
-    // In actual implementation, you should calculate these based on the matrix
-    // of voltage components [ed_plus, eq_plus, ed_minus, eq_minus]
-    // For the actual inverse matrix calculation, you would use a numerical method or a library
-    
-    // The Po_star and Qo_star terms correspond to the desired power outputs
-    // Here we are solving the linear system using matrix multiplication of the inverse matrix with power vector
-    *id_star_plus = a11 * Po_star + a12 * 0 + a13 * 0 + a14 * Qo_star;
-    *iq_star_plus = a21 * Po_star + a22 * 0 + a23 * 0 + a24 * Qo_star;
-    *id_star_minus = a31 * Po_star + a32 * 0 + a33 * 0 + a34 * Qo_star;
-    *iq_star_minus = a41 * Po_star + a42 * 0 + a43 * 0 + a44 * Qo_star;
-}
+
