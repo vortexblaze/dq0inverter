@@ -1,4 +1,6 @@
 EXPORTS
-    get_checksum_source_info @1
-    get_dll_checksum_DYH0yu4nhDFcQ7WEVC5Go @2
-    initializeMatrix_DYH0yu4nhDFcQ7WEVC5Go @3
+    calculateDZSV_DYH0yu4nhDFcQ7WEVC5Go @1
+    findMedian_DYH0yu4nhDFcQ7WEVC5Go @2
+    get_checksum_source_info @3
+    get_dll_checksum_DYH0yu4nhDFcQ7WEVC5Go @4
+    initializeMatrix_DYH0yu4nhDFcQ7WEVC5Go @5

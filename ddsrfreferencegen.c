@@ -1,5 +1,6 @@
 #include <ddsrfreferencegen.h>;
 
+
 #define SIZE 4
 
 // Helper function to calculate the determinant of a 2x2 matrix
@@ -120,4 +121,42 @@ void initializeMatrix(double mat[4][4], double ed_plus, double eq_plus, double e
     mat[3][3] = -ed_minus;
 }
 
+double findMedian(double a, double b, double c) {
+    double middle;
+    if ((a <= b && b <= c) || (c <= b && b <= a))
+        middle = b;
+    else if ((b <= a && a <= c) || (c <= a && a <= b))
+        middle = a;
+    else
+        middle = c;
+    return middle;
+}
 
+double calculateDZSV(double D_Aref, double D_Bref, double D_Cref, double k) {
+    double median = findMedian(D_Aref, D_Bref, D_Cref);
+    return -(k * median);
+}
+
+double updateDZSV(double V_Aref, double V_Bref, double V_Cref, double k) {
+    double current_median = findMedian(V_Aref, V_Bref, V_Cref);
+    static double last_median = 0;  // Static variable to store the last median value
+    double correction_factor = 1.0;
+
+    // Check if there is a significant change in the median
+    if (fabs(current_median - last_median) > 10) {
+        correction_factor = -current_median;  // Implement corrective adjustment
+        last_median = current_median;  // Update the last median
+    } else if
+    (fabs(current_median - last_median) < 10) {
+        correction_factor = -current_median;  // Implement corrective adjustment
+        last_median = current_median;  // Update the last median
+    }
+    else {
+        correction_factor = 0;  // Implement corrective adjustment
+        last_median = current_median;  // Update the last median
+    }
+
+    // Adjust zero-sequence voltage
+    double DZSV = k * (correction_factor);
+    return DZSV;
+}
